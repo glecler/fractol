@@ -1,0 +1,111 @@
+typedef struct s_win_data
+{
+	void		*mlx_ptr;
+	void		*win_ptr;
+	void		*img_ptr;
+	int			bpp;
+	int			endian;
+	int			size_line;
+	char		*addr;
+
+	int			re_min;
+	int			re_max;
+	int			im_min;
+	int			im_max;
+
+}				t_win_data;
+
+typedef struct s_complex
+{
+	int		re;
+	int		im;
+}				t_complex;
+
+int		ft_frac_algo(t_win_data *win_data)
+{
+	t_complex	zo;
+	t_complex	c;
+	int			rank;
+
+	zo.re = win_data->re_min;
+	zo.im = win_data->im_min;
+
+	win_data->img_ptr = mlx_new_image(win_data->mlx_ptr, win_data->img_width,
+		win_data->img_width);
+	win_data->addr = mlx_get_data_addr(win_data->img_ptr, &(data->bpp),
+		&(data->size_line), &(data->endian));
+	while (zo.re < win_data->re_max)
+	{
+		while (zo.im < win_data->im_max)
+		{
+			rank = ft_is_bound(zo);
+			ft_put_pixel_img(win_data, zo.re, zo.im, int rank);
+			zo.im += win_data->step;
+		}
+		zo.re += win_data->step;
+		zo.im = win_data->im_min;
+	}
+}
+
+int		ft_is_bound(t_complex c, t_complex zo)
+{
+	int R;
+
+	...
+
+}
+
+void	mlx_win_gen(int	frac_type)
+{
+	t_win_data win_data;
+	
+	win_data.mlx_ptr = mlx_init();
+	win_data.win_ptr = mlx_new_window(win_data.mlx_ptr, 800, 600, "fract'ol");
+
+	ft_frac_algo(&win_data);
+
+	res = mlx_put_image_to_window(win_data.mlx_ptr, win_data.win_ptr, win_data.img_ptr, 0, 0);
+	mlx_key_hook(win_data.win_ptr, get_key, &(data));
+	mlx_loop(win_data.mlx_ptr);
+}
+
+int main(int ac, char **av)
+{
+    if (ac != 2)
+    {
+        ft_putstr("usage : ./fractol <fractal type>\n");
+        return (0);
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int		ft_put_pixel_img(t_data *data, int x, int y, char *color)
+{
+	char	*cpy;
+
+	cpy = data->addr;
+	i = 0;
+	if (y >= data->img_width || x >= data->img_width || x < 0 || y < 0)
+		return (0);
+	data->addr += y * data->size_line + x * (data->bpp / 8);
+	*(data->addr) = color[0];
+    *(data->addr + 1) = color[1];
+    *(data->addr + 2) = color[2];
+	data->addr = cpy;
+	return (1);
+}

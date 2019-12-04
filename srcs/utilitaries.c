@@ -12,7 +12,7 @@ void	ft_init_param(t_complex *param, t_win_data *win_data)
 	param->im = win_data->im_min;
 }
 
-void	ft_init_data(t_win_data *win_data)
+void	ft_init_data(t_win_data *win_data, int frac_type)
 {
 	win_data->mlx_ptr = 0;
 	win_data->win_ptr = 0;
@@ -28,14 +28,15 @@ void	ft_init_data(t_win_data *win_data)
 	win_data->step = 4.0 / 600.0;
 	win_data->re_max = 600 * win_data->step + win_data->re_min;
 	win_data->im_max = win_data->re_max;
-	win_data->zoom = 1;
+	win_data->zoom = 1.0;
+	if (frac_type == 1)
+		;
 	ft_init_var(&(win_data->var));
 }
 
 void	ft_init_var(t_var *var)
 {
 	var->rank = 0;
-	var->julia_c.re = 0;
-	var->julia_c.im = 0;
-	var;
+	var->julia_c.re = -0.15684447169425710194;
+	var->julia_c.im = -0.649707745759247905171;
 }

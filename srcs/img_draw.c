@@ -1,32 +1,42 @@
 #include "fractol.h"
 
-void	ft_color_pick(char *color, int rank)
+char	*ft_color_pick(char *color, int rank)
 {
-	if (rank < 2)
-		ft_apply_color(color, "255211025");
-	if (rank < 4 && rank >= 2)
-		ft_apply_color(color, "255144031");
-	if (rank < 10 && rank >= 4)
-		ft_apply_color(color, "255041117");
-	if (rank < 15 && rank >= 10)
-		ft_apply_color(color, "242034255");
-	if (rank < 20 && rank >= 15)
-		ft_apply_color(color, "140030255");
-	if (rank > 20)
+	if (rank > 900)
+	{
 		ft_apply_color(color, "000000000");
+		return (color);
+	}
+	while (rank > 56)
+		rank -= 50;
+	while (rank > 6)
+	 	rank -= 6;
+	if (rank == 1)
+		ft_apply_color(color, "245127094");
+	if (rank == 2)
+		ft_apply_color(color, "243196046");
+	if (rank == 3)
+		ft_apply_color(color, "232252000");
+	if (rank == 4)
+		ft_apply_color(color, "134155096");
+	if (rank == 5)
+		ft_apply_color(color, "143155096");
+	if (rank == 6)
+		ft_apply_color(color, "134123036");
 	return (color);
 }
 
-void	ft_appy_color(char *color, char *rgb)
+char	*ft_apply_color(char *color, char *rgb)
 {
 	int n;
 
 	n = 0;
 	while (n < 3)
 	{
-		color[n] = rgb[3 * n] * 100 + rgb[3 * n + 1] * 10 + rgb[3 * n + 2] - 3441;
+		color[n] = rgb[3 * n] * 100 + rgb[3 * n + 1] * 10 + rgb[3 * n + 2] - 5328;
 		n += 1; 
 	}
+	return (color);
 }
 
 int		ft_put_pixel_img(t_win_data *data, int x, int y, char *color)
@@ -34,7 +44,7 @@ int		ft_put_pixel_img(t_win_data *data, int x, int y, char *color)
 	char	*cpy;
 
 	cpy = data->addr;
-	if (y >= data->img_width || x >= data->img_width || x < 0 || y < 0)
+	if (y >= 600 || x >= 600 || x < 0 || y < 0)
 		return (0);
 	data->addr += y * data->size_line + x * (data->bpp / 8);
 	*(data->addr) = color[0];

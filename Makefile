@@ -1,6 +1,6 @@
 NAME 	= fractol
 SRC 	= ./srcs/utilitaries.c ./srcs/img_draw.c ./srcs/complex.c \
-			./srcs/algo.c ./srcs/main.c
+			./srcs/algo.c ./srcs/main.c ./srcs/key_handler.c
 FLAGS 	= -Wall -Wextra -Werror 
 CC		= gcc
 	CL=\x1b[35m
@@ -13,7 +13,7 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	@$(MAKE) -C libft
-	@$(CC) $(FLAGS) -I minilibx_macos $(SRC) ./libft/libft.a -L minilibx_macos -lmlx -framework OpenGL -framework Appkit -o fdf
+	@$(CC) $(FLAGS) -lpthread -I minilibx_macos $(SRC) ./libft/libft.a -L minilibx_macos -lmlx -framework OpenGL -framework Appkit -o fractol
 	@echo "$(GREEN)[✓]$(NC)$(CL) $(NAME) built$(NC)"
 
 clean:

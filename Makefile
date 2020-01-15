@@ -1,6 +1,7 @@
 NAME 	= fractol
 SRC 	= ./srcs/utilitaries.c ./srcs/img_draw.c ./srcs/complex.c \
-			./srcs/algo.c ./srcs/main.c ./srcs/key_handler.c
+			./srcs/algo.c ./srcs/main.c ./srcs/key_handler.c \
+			./srcs/user_interface.c
 FLAGS 	= -Wall -Wextra -Werror 
 CC		= gcc
 	CL=\x1b[35m

@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   img_draw.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glecler <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/28 18:51:08 by glecler           #+#    #+#             */
+/*   Updated: 2020/01/28 19:50:22 by glecler          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	ft_apply_color(t_win_data *win_data, float rank)
 {
-	
-if (rank >= win_data->var.niter)
+	if (rank >= win_data->var.niter)
 		rank = 0;
 	win_data->color[0] = ((int)((win_data->rgb[0]) * rank));
 	win_data->color[1] = ((int)((win_data->rgb[1]) * rank));
@@ -17,8 +28,8 @@ int		ft_put_pixel_img(t_win_data *data, int x, int y, char *color)
 	cpy = data->addr;
 	data->addr += y * data->size_line + x * 4;
 	*(data->addr) = color[0];
-    *(data->addr + 1) = color[1];
-    *(data->addr + 2) = color[2];
+	*(data->addr + 1) = color[1];
+	*(data->addr + 2) = color[2];
 	data->addr = cpy;
 	return (1);
 }

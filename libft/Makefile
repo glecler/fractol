@@ -12,7 +12,7 @@
 
 NAME = libft.a
 
-FLAG = -Wall -Wextra -Werror 
+FLAG = -Wall -Wextra -Werror -Wno-nullability-completeness
 
 SOURCE = ./ft_memset.c \
 		./ft_bzero.c \
@@ -69,7 +69,7 @@ SOURCE = ./ft_memset.c \
 		./get_next_line.c \
 		./ft_abs.c
 
-CC 	= gcc
+CC 	= clang
 	CL=\x1b[35m
 	GREEN=\033[1;32m
 	RED=\033[1;31m

@@ -11,10 +11,5 @@ Customization: Customize colors, iterations, and other properties to create uniq
 ###Some pretty pictures :
 
 ![fractal](screenshots/1.png)
-![fractal](screenshots/2.png)
-![fractal](screenshots/3.png)
-![fractal](screenshots/4.png)
 ![fractal](screenshots/5.png)
 ![fractal](screenshots/6.png)
-![fractal](screenshots/7.png)
-![fractal](screenshots/8.png)

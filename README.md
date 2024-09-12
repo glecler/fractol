@@ -11,7 +11,7 @@ Customization: Customize colors, iterations, and other properties to create uniq
 ###Some pretty pictures :
 
 <p float="left">
-  <img src="./path/to/screenshot1.png" width="300" />
-  <img src="./path/to/screenshot2.png" width="300" />
-  <img src="./path/to/screenshot3.png" width="300" />
+  <img src="./screenshots/1.png" width="300" />
+  <img src="./screenshots/2.png" width="300" />
+  <img src="./screenshots/3.png" width="300" />
 </p>

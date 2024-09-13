@@ -15,7 +15,7 @@ Customization: Customize colors, iterations, and other properties to create uniq
   <img src="./screenshots/5.png" width="300" />
   <img src="./screenshots/6.png" width="300" />
   <br>
-  <img src="./screenshots/optimized_fractol2.gif" alt="Fractol Demo" width="600" />
+  <img src="./screenshots/fractol2_optimized.gif" alt="Fractol Demo" width="600" />
 </p>
 
 </p>

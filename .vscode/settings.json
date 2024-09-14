@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "fractol.h": "c",
-        "__mutex_base": "c",
-        "memory": "c",
-        "mutex": "c"
-    }
-}
